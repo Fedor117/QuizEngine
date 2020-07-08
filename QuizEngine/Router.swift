@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Router {
-    typealias AnswerCallback = (String) -> Void
+    typealias AnswerCallback = (Answer) -> Void
     
-    func routeTo(question: String, answerCallback: @escaping AnswerCallback)
+    func routeTo(question: Question, answerCallback: @escaping AnswerCallback)
 }

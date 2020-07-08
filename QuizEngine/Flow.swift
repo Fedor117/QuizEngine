@@ -10,9 +10,9 @@ import Foundation
 
 final class Flow {
     private let router: Router
-    private let questions: [String]
+    private let questions: [Question]
     
-    init(router: Router, questions: [String]) {
+    init(router: Router, questions: [Question]) {
         self.router = router
         self.questions = questions
     }
@@ -23,7 +23,7 @@ final class Flow {
         }
     }
     
-    private func routeNext(from question: String) -> Router.AnswerCallback {
+    private func routeNext(from question: Question) -> Router.AnswerCallback {
         return { [weak self] _ in
             guard let strongSelf = self else {
                 return
