@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Entity {
+protocol Entity: Hashable {
     func getId() -> String
 }

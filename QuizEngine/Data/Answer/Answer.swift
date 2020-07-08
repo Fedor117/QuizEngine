@@ -23,3 +23,15 @@ extension Answer {
         return id
     }
 }
+
+// MARK: - Hashable
+
+extension Answer: Hashable {
+    static func == (lhs: Answer, rhs: Answer) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

@@ -11,6 +11,6 @@ import Foundation
 protocol EntityFactory {
     associatedtype Result
     
-    func make(withId id: String) -> Result
+    func make(withId id: String) -> Result?
     func makeList(_ ids: [String]) -> [Result]
 }

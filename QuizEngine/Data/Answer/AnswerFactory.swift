@@ -11,8 +11,8 @@ import Foundation
 final class AnswerFactory: EntityFactory {
     typealias Result = Answer
     
-    func make(withId id: String) -> Result {
-        return Answer(id: id)
+    func make(withId id: String) -> Result? {
+        return id.isEmpty ? nil : Answer(id: id)
     }
     
     func makeList(_ ids: [String]) -> [Result] {

@@ -76,7 +76,7 @@ class FlowTest: XCTestCase {
         
         sut.start()
 
-        router.answerCallback(AnswerFactory().make(withId: "A1"))
+        router.answerCallback(AnswerFactory().make(withId: "A1")!)
         
         XCTAssertEqual(router.routedQuestions, questions)
     }
@@ -87,7 +87,7 @@ class FlowTest: XCTestCase {
         
         sut.start()
 
-        router.answerCallback(AnswerFactory().make(withId: "A1"))
+        router.answerCallback(AnswerFactory().make(withId: "A1")!)
         
         XCTAssertEqual(router.routedQuestions, questions)
     }
@@ -99,8 +99,8 @@ class FlowTest: XCTestCase {
         sut.start()
 
         let answerFactory = AnswerFactory()
-        router.answerCallback(answerFactory.make(withId: "A1"))
-        router.answerCallback(answerFactory.make(withId: "A2"))
+        router.answerCallback(answerFactory.make(withId: "A1")!)
+        router.answerCallback(answerFactory.make(withId: "A2")!)
         
         XCTAssertEqual(router.routedQuestions, questions)
     }
